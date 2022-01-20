@@ -22,6 +22,12 @@ class Connection:
         self.conn.commit()
         return item_id
 
+    def process(self, item):
+        found = self.exec_select(*item.found())
+        if len(found) == 0:
+            return self.exec_insert(*item.save())
+        return found[0][0]
+
     def close(self):
         self.conn.close()
 

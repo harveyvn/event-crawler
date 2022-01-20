@@ -5,8 +5,7 @@ class Constants:
     def __init__(self):
         self.DOMAIN = "https://www.lucernefestival.ch"
         self.LOCATIONS = "locations"
-        self.MONTH = "month"
-        self.DAY = "day"
+        self.DATE = "date"
         self.HOUR = "hour"
         self.MINS = "minute"
         self.TITLE = "title"
