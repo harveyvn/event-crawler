@@ -1,7 +1,5 @@
 import logging
-import psycopg2
-from modules import CONST, Connection, Crawler
-from modules.models import Location, Cover
+from modules import Crawler, Writer
 
 logging.getLogger("scrapy").propagate = False
 
@@ -10,26 +8,7 @@ if __name__ == '__main__':
             "https://www.lucernefestival.ch/en/program/mendelssohn-festival-22"]
 
     crawler = Crawler(urls[0])
-    crawler.get_events()
-    crawler.get_programs()
 
-    events = crawler.events
+    writer = Writer(events=crawler.events)
+    writer.to_db()
 
-    conn = None
-    try:
-        print("Connecting to the PostgreSQl database...")
-        conn = Connection()
-        print(f'PostgreSQl database version: {conn.exec_select("SELECT version()")}')
-
-        for event in events:
-            for location in event[CONST.LOCATIONS]:
-                conn.process(Location(name=location))
-            for cover in event[CONST.COVER]:
-                print(conn.process(Cover(url=cover)))
-
-    except(Exception, psycopg2.DatabaseError) as e:
-        print("Exception:", e)
-    finally:
-        if conn is not None:
-            conn.close()
-            print("Database connection closed.")

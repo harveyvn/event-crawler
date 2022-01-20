@@ -8,6 +8,8 @@ class Crawler:
     def __init__(self, url):
         self.url = url
         self.events = []
+        self.get_events()
+        self.get_programs()
 
     def get_events(self):
         with yaspin(text="Crawling events!", color="yellow") as spinner:
