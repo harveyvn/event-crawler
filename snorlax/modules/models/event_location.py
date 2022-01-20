@@ -4,7 +4,7 @@ class EventLocation:
         self.location_id = location_id
         self.date = date
 
-    def found(self, ):
+    def found(self):
         query = """SELECT * FROM event_locations where event_id = %s and location_id = %s"""
         items = (self.event_id, self.location_id,)
         return query, items

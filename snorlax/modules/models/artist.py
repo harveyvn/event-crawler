@@ -2,7 +2,7 @@ class Artist:
     def __init__(self, name: str):
         self.name = name
 
-    def found(self, ):
+    def found(self):
         query = """SELECT * FROM artists where name = %s"""
         items = (self.name,)
         return query, items

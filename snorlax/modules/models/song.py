@@ -2,7 +2,7 @@ class Song:
     def __init__(self, title: str):
         self.title = title
 
-    def found(self, ):
+    def found(self):
         query = """SELECT * FROM songs where title = %s"""
         items = (self.title,)
         return query, items

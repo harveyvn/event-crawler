@@ -2,7 +2,7 @@ class Cover:
     def __init__(self, url: str):
         self.url = url
 
-    def found(self, ):
+    def found(self):
         query = """SELECT * FROM covers where url = %s"""
         items = (self.url,)
         return query, items

@@ -2,7 +2,7 @@ class Location:
     def __init__(self, name: str):
         self.name = name
 
-    def found(self, ):
+    def found(self):
         query = """SELECT * FROM locations where name = %s"""
         items = (self.name,)
         return query, items
