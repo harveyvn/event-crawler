@@ -5,3 +5,5 @@ from .song import Song
 from .event import Event
 from .event_location import EventLocation
 from .event_cover import EventCover
+from .event_artist import EventArtist
+from .event_song import EventSong
