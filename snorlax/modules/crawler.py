@@ -25,7 +25,7 @@ class Crawler:
 
     def get_programs(self):
         for i, event in enumerate(self.events):
-            with yaspin(text=f'Crawling a program from an event {i + 1}/{len(self.events)}!',
+            with yaspin(text=f'Crawling programs from an event {i + 1}/{len(self.events)}!',
                         color="yellow") as spinner:
                 link = event[CONST.LINK]
                 job = Job(ProgramSpider, url=link)
