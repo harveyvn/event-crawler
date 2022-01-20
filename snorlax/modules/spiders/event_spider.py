@@ -53,7 +53,7 @@ class EventSpider(scrapy.spiders.Spider):
             hour, minute = time.split('.')
             locations = re.sub(CONST.HTML_TAG, '', locations)
             locations = re.sub("\s+", '', locations).split(',')
-            cover = re.findall(r'\((.*?)\)', cover)
+            cover = re.findall(r'\((.*?)\)', cover)[0]
             link = CONST.DOMAIN + link
             title = title.title()
             if self.validate(day, month, hour, minute, locations, title, link, cover):
