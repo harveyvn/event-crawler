@@ -51,7 +51,8 @@ class EventSpider(scrapy.spiders.Spider):
                 in zip(locations, dates, times, titles, links, covers):
             hour, minute = time.split('.')
             locations = re.sub(CONST.HTML_TAG, '', locations)
-            locations = re.sub("\s+", '', locations).split(',')
+            locations = re.sub("\t", '', locations)
+            locations = [location.lstrip() for location in re.sub("\n", '', locations).split(',')]
             cover = re.findall(r'\((.*?)\)', cover)
             link = CONST.DOMAIN + link
             title = title.title()
