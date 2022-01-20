@@ -10,6 +10,12 @@ class ProgramSpider(scrapy.spiders.Spider):
     def start_requests(self):
         yield scrapy.Request(self.url)
 
+    @staticmethod
+    def validate(artists, songs):
+        if len(artists) < 1 or len(songs) < 1:
+            return False
+        return True
+
     def parse(self, response):
         # Define css selector
         artist_sel = "//div[@class='artists-musical-pieces']/div[@class='artist']/strong"
@@ -30,11 +36,9 @@ class ProgramSpider(scrapy.spiders.Spider):
             songs[i] = re.sub(r'\)', ') ', songs[i])
             songs[i] = ' '.join([x.title() for x in songs[i].split(' ') if x])
 
-        assert len(artists) > 0
-        assert len(songs) > 0
-
-        return {
-            CONST.ARTISTS: artists,
-            CONST.SONGS: songs
-        }
-
+        if self.validate(artists, songs) is True:
+            return {
+                CONST.ARTISTS: artists,
+                CONST.SONGS: songs
+            }
+        pass
