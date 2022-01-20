@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     with yaspin(text="Crawling events!", color="yellow") as spinner:
         processor = Processor(settings=None)
-        job = Job(EventSpider, url=urls[1])
+        job = Job(EventSpider, url=urls[0])
         events = processor.run(job)
 
         if len(events) > 0:

@@ -1,7 +1,7 @@
 import scrapy
 import re
 from ..constant import CONST
-from ..common import generate_items
+from ..common import generate, is_numeric, is_empty
 
 
 class EventSpider(scrapy.spiders.Spider):
@@ -9,6 +9,19 @@ class EventSpider(scrapy.spiders.Spider):
 
     def start_requests(self):
         yield scrapy.Request(self.url)
+
+    @staticmethod
+    def validate(day, month, hour, minute, locations, title, link, cover):
+        if is_numeric([day, month, hour, minute]) is False:
+            return False
+
+        if len(locations) == 0:
+            return False
+
+        if is_empty([title, link, cover]) is False:
+            return False
+
+        return True
 
     def parse(self, response):
         # Define css selectors
@@ -21,13 +34,13 @@ class EventSpider(scrapy.spiders.Spider):
         cover_sel = "//div[@class='entry']/div[@class='wi']/div[@class='image']/@style"
 
         # Extract the items
-        locations = generate_items(response, location_sel)
-        days = generate_items(response, day_sel)
-        months = generate_items(response, month_sel)
-        times = generate_items(response, time_sel)
-        titles = generate_items(response, title_sel)
-        links = generate_items(response, link_sel)
-        covers = generate_items(response, cover_sel)
+        locations = generate(response, location_sel)
+        days = generate(response, day_sel)
+        months = generate(response, month_sel)
+        times = generate(response, time_sel)
+        titles = generate(response, title_sel)
+        links = generate(response, link_sel)
+        covers = generate(response, cover_sel)
 
         # Assure the number of each properties are equal
         assert len(locations) == len(days) == len(months) == len(times) == len(titles) == len(links) == len(covers)
@@ -43,15 +56,16 @@ class EventSpider(scrapy.spiders.Spider):
             cover = re.findall(r'\((.*?)\)', cover)
             link = CONST.DOMAIN + link
             title = title.title()
-            event = {
-                CONST.DAY: int(day),
-                CONST.MONTH: int(month),
-                CONST.HOUR: int(hour),
-                CONST.MINS: int(minute),
-                CONST.LOCATIONS: locations,
-                CONST.TITLE: title,
-                CONST.LINK: link,
-                CONST.COVER: cover
-            }
-            events.append(event)
+            if self.validate(day, month, hour, minute, locations, title, link, cover):
+                event = {
+                    CONST.DAY: int(day),
+                    CONST.MONTH: int(month),
+                    CONST.HOUR: int(hour),
+                    CONST.MINS: int(minute),
+                    CONST.LOCATIONS: locations,
+                    CONST.TITLE: title,
+                    CONST.LINK: link,
+                    CONST.COVER: cover
+                }
+                events.append(event)
         return events

@@ -1,7 +1,7 @@
 import scrapy
 import re
 from ..constant import CONST
-from ..common import generate_items
+from ..common import generate
 
 
 class ProgramSpider(scrapy.spiders.Spider):
@@ -16,10 +16,8 @@ class ProgramSpider(scrapy.spiders.Spider):
         song_sel = "//div[@class='artists-musical-pieces']/div[@class='musical-piece']"
         song_sel_alt = "//div[@class='artists-musical-pieces']/div[@class='with-spaces']"
 
-        artists = [re.sub(CONST.HTML_TAG, '', artist).strip() for artist in generate_items(response, artist_sel)]
-        songs = generate_items(response, song_sel)
-        if len(songs) == 0:
-            songs = generate_items(response, song_sel_alt)
+        artists = [re.sub(CONST.HTML_TAG, '', artist).strip() for artist in generate(response, artist_sel)]
+        songs = generate(response, song_sel) if len(generate(response, song_sel)) > 0 else generate(response, song_sel_alt)
         for i, song in enumerate(songs):
             songs[i] = re.sub(CONST.HTML_TAG, '', songs[i]).strip()
             songs[i] = re.sub(r'\xa0', '', songs[i])
