@@ -1,4 +1,5 @@
 from typing import List
+import datetime
 
 
 def generate(response, selector: str):
@@ -17,3 +18,7 @@ def is_empty(items: List[str]):
         if not item:
             return False
         return True
+
+
+def timestamp(date, hour, minute):
+    return f'{date} {hour}:{minute}:00+01'
