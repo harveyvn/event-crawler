@@ -22,7 +22,7 @@ class Reader:
             ids (list): list of event id.
         """
         self.conn.cur.execute(f'SELECT id FROM events;')
-        return self.conn.cur.fetchall()
+        return [id[0] for id in self.conn.cur.fetchall()]
 
     def get_date(self, id):
         """

@@ -1,6 +1,6 @@
 from __future__ import print_function, unicode_literals
 import logging
-from modules import Crawler, Writer
+from modules.controllers import Crawler, Writer, Uploader
 
 logging.getLogger("scrapy").propagate = False
 
@@ -27,5 +27,13 @@ if __name__ == '__main__':
                 choice = input("Choice: ")
                 if choice == 'Y':
                     Writer(events=events).to_db()
+
+                    print("(Y) Download as csv file, (Q) Quit, (Others) Back to welcome screen.")
+                    choice = input("Choice: ")
+                    if choice == 'Y':
+                        Uploader.write_file()
+                        print(f'Download demo.csv at: {Uploader.upload_file()}')
+                    if choice == 'Q':
+                        flag = False
                 elif choice == 'Q':
                     flag = False
