@@ -20,4 +20,4 @@ def is_empty(items: List[str]):
 
 
 def timestamp(date, hour, minute):
-    return f'{date} {hour}:{minute}:00+01'
+    return f'{date} {hour}:{minute}:00+01:00'

@@ -4,3 +4,5 @@ scrapyscript==1.1.5
 yaspin==2.1.0
 pytest==6.2.5
 pytest-cov==3.0.0
+
+python-dateutil==2.8.2
