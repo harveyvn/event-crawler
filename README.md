@@ -1,6 +1,6 @@
 # SNORLER: Automatically Crawling Events with Python
 
-This document describes how to install and use SNORLER. A video demonstration of the tool is available on [YouTube](https://google.com).
+This document describes how to install and use SNORLER. A video demonstration of the tool is available on [YouTube](https://youtu.be/3FeCl4ayFvs).
 
 ## Repo Organization
 
