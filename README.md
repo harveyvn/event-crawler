@@ -1,6 +1,6 @@
-# SNORLER: Automatically Crawling Events with Python
+# SNORLAX: Automatically Crawling Events with Python
 
-This document describes how to install and use SNORLER. A video demonstration of the tool is available on [YouTube](https://youtu.be/3FeCl4ayFvs).
+This document describes how to install and use SNORLAX. A video demonstration of the tool is available on [YouTube](https://youtu.be/3FeCl4ayFvs).
 
 ## Features
 - Crawl events (date, time, location, title, artists, works and image link).
