@@ -2,6 +2,13 @@
 
 This document describes how to install and use SNORLER. A video demonstration of the tool is available on [YouTube](https://youtu.be/3FeCl4ayFvs).
 
+## Features
+- Crawl events (date, time, location, title, artists, works and image link).
+- Insert data into database (PostgresSQL), with a self-defined schema.
+- Run on different machines with docker compose.
+- Attractive interactive prompt python.
+- Export csv file.
+
 ## Repo Organization
 
 ```
