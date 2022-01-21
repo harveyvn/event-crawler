@@ -1,6 +1,6 @@
 import unittest
-from snorlax.modules.models import Event
-from snorlax.modules.constant import CONST
+from modules.models import Event
+from modules.constant import CONST
 
 
 class TestEvent(unittest.TestCase):

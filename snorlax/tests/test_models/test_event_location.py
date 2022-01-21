@@ -1,6 +1,6 @@
 import unittest
-from snorlax.modules.models import EventLocation
-from snorlax.modules.constant import CONST
+from modules.models import EventLocation
+from modules.constant import CONST
 
 
 class TestEventLocation(unittest.TestCase):

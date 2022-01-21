@@ -1,6 +1,6 @@
 import unittest
-from snorlax.modules.models import Cover
-from snorlax.modules.constant import CONST
+from modules.models import Cover
+from modules.constant import CONST
 
 
 class TestCover(unittest.TestCase):

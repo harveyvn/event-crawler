@@ -1,6 +1,6 @@
 import unittest
-from snorlax.modules.models import Location
-from snorlax.modules.constant import CONST
+from modules.models import Location
+from modules.constant import CONST
 
 
 class TestLocation(unittest.TestCase):

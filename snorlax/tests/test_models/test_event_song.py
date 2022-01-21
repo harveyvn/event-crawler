@@ -1,6 +1,6 @@
 import unittest
-from snorlax.modules.models import EventSong
-from snorlax.modules.constant import CONST
+from modules.models import EventSong
+from modules.constant import CONST
 
 
 class TestEventSong(unittest.TestCase):

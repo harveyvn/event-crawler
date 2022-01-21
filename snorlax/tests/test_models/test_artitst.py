@@ -1,6 +1,6 @@
 import unittest
-from snorlax.modules.models import Artist
-from snorlax.modules.constant import CONST
+from modules.models import Artist
+from modules.constant import CONST
 
 
 class TestArtist(unittest.TestCase):

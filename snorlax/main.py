@@ -10,14 +10,14 @@ if __name__ == '__main__':
 
     flag = True
     while flag:
-        print("Welcome to simple crawler! (Y) Continue, (T) Run unittest, (Q) Quit.")
+        print("Welcome to simple crawler! (Y) Continue, (Q) Quit.")
         choice = input("Choice: ")
         if choice == 'Q':
             flag = False
         if choice == 'T':
             pass
         if choice == 'Y':
-            url = input("Enter an url to crawl events, (B) BYack: ")
+            url = input("Enter an url to crawl events, (B) Back: ")
             if url == 'B':
                 pass
             else:

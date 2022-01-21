@@ -1,6 +1,6 @@
 import unittest
-from snorlax.modules.models import EventArtist
-from snorlax.modules.constant import CONST
+from modules.models import EventArtist
+from modules.constant import CONST
 
 
 class TestEventArtist(unittest.TestCase):

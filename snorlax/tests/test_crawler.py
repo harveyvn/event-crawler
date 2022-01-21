@@ -1,7 +1,7 @@
 import logging
 import unittest
-from snorlax.modules.crawler import Crawler
-from snorlax.modules.constant import CONST
+from modules.crawler import Crawler
+from modules.constant import CONST
 
 
 class TestCrawler(unittest.TestCase):

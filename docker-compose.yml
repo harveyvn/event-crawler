@@ -22,3 +22,10 @@ services:
       - postgres
     volumes:
       - ./snorlax:/code
+  test:
+    build: ./snorlax/
+    command: [ "python", "tests/runner.py" ]
+    depends_on:
+      - postgres
+    volumes:
+      - ./snorlax:/code

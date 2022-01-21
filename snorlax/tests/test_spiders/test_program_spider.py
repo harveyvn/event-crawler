@@ -3,8 +3,8 @@ import unittest
 
 from scrapyscript import Processor, Job
 
-from snorlax.modules.constant import CONST
-from snorlax.modules.spiders import ProgramSpider
+from modules.constant import CONST
+from modules.spiders import ProgramSpider
 
 
 class TestProgramSpider(unittest.TestCase):
