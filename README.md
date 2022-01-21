@@ -7,7 +7,7 @@ This document describes how to install and use SNORLER. A video demonstration of
 - Insert data into database (PostgresSQL), with a self-defined schema.
 - Run on different machines with docker compose.
 - Attractive interactive prompt python.
-- Export csv file.
+- Export database as csv file.
 
 ## Repo Organization
 
