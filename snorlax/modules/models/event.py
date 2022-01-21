@@ -1,6 +1,12 @@
+from ..constant import CONST
+
+
 class Event:
     def __init__(self, title: str):
         self.title = title
+        self.status = CONST.PASSED
+        if title is None:
+            self.status = CONST.FAILED
 
     def found(self):
         query = """SELECT * FROM events where title = %s"""

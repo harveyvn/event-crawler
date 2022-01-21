@@ -2,6 +2,7 @@ from typing import Tuple
 
 import psycopg2
 from .config import config
+from .constant import CONST
 
 
 class Connection:
@@ -23,6 +24,8 @@ class Connection:
         return int(item_id)
 
     def process(self, item):
+        if item.status == CONST.FAILED:
+            return CONST.FAILED
         found = self.exec_select(*item.found())
         if len(found) == 0:
             return self.exec_insert(*item.save())

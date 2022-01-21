@@ -1,6 +1,12 @@
+from ..constant import CONST
+
+
 class Artist:
     def __init__(self, name: str):
         self.name = name
+        self.status = CONST.PASSED
+        if not name:
+            self.status = CONST.FAILED
 
     def found(self):
         query = """SELECT * FROM artists where name = %s"""
