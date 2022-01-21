@@ -2,7 +2,7 @@ import logging
 import unittest
 import psycopg2
 
-from modules.crawler import Crawler
+from modules.controllers import Crawler
 from modules.constant import CONST
 from modules.connection import Connection
 from modules.models import Event

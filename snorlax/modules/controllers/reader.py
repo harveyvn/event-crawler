@@ -1,4 +1,4 @@
-from .connection import Connection
+from modules.connection import Connection
 
 
 class Reader:

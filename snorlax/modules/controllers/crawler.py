@@ -1,7 +1,7 @@
 from scrapyscript import Processor, Job
 from yaspin import yaspin
-from .spiders import EventSpider, ProgramSpider
-from .constant import CONST
+from modules.spiders import EventSpider, ProgramSpider
+from modules.constant import CONST
 
 
 class Crawler:

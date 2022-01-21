@@ -1,11 +1,9 @@
 import logging
 import unittest
 from dateutil.parser import parse
-from modules.writer import Writer
-from modules.reader import Reader
-from modules.crawler import Crawler
 from modules.constant import CONST
 from modules.common import timestamp
+from modules.controllers import Writer, Reader, Crawler
 
 
 class TestWriter(unittest.TestCase):

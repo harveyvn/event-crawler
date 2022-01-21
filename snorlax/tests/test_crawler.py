@@ -1,6 +1,6 @@
 import logging
 import unittest
-from modules.crawler import Crawler
+from modules.controllers import Crawler
 from modules.constant import CONST
 
 

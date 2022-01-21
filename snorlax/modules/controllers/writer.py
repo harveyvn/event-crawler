@@ -1,10 +1,10 @@
 import psycopg2
 from typing import List
 from yaspin import yaspin
-from .constant import CONST
-from .connection import Connection
-from .common import timestamp
-from .models import Location, Cover, Artist, Song, Event, EventLocation, EventCover, EventArtist, EventSong
+from modules.constant import CONST
+from modules.connection import Connection
+from modules.common import timestamp
+from modules.models import Location, Cover, Artist, Song, Event, EventLocation, EventCover, EventArtist, EventSong
 
 
 class Writer:
