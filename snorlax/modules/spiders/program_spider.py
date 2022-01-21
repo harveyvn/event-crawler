@@ -5,6 +5,10 @@ from ..common import generate
 
 
 class ProgramSpider(scrapy.spiders.Spider):
+    """
+    The ProgramSpider class declares the interface that crawls songs, artists from given url.
+
+    """
     name = "program"
 
     def start_requests(self):
@@ -17,6 +21,14 @@ class ProgramSpider(scrapy.spiders.Spider):
         return True
 
     def parse(self, response):
+        """
+        Define appropriate css selectors, then use them to guide a spider crawling useful text
+        from corresponding html sections.
+
+        Returns:
+            dict: An dictionary includes list of artists [str] and list of songs [str]
+        """
+
         # Define css selector
         artist_sel = "//div[@class='artists-musical-pieces']/div[@class='artist']/strong"
         song_sel = "//div[@class='artists-musical-pieces']/div[@class='musical-piece']"
