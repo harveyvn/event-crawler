@@ -1,5 +1,4 @@
 from typing import List
-import datetime
 
 
 def generate(response, selector: str):

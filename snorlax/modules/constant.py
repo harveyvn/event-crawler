@@ -15,6 +15,8 @@ class Constants:
         self.SONGS = "songs"
         self.PROGRAM = "program"
         self.COVER = "cover"
+        self.FAILED = -1
+        self.PASSED = 1
         self.HTML_TAG = re.compile('<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});')
 
     def __str__(self):
