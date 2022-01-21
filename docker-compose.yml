@@ -24,7 +24,7 @@ services:
       - ./snorlax:/code
   test:
     build: ./snorlax/
-    command: python -m pytest tests --capture=sys --tb=no
+    command: python -m pytest tests --capture=sys --tb=no --cov=modules
     depends_on:
       - postgres
     volumes:
