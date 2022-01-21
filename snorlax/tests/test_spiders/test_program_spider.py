@@ -1,7 +1,10 @@
-import unittest, logging
+import logging
+import unittest
+
 from scrapyscript import Processor, Job
-from snorlax.modules.spiders import ProgramSpider
+
 from snorlax.modules.constant import CONST
+from snorlax.modules.spiders import ProgramSpider
 
 
 class TestProgramSpider(unittest.TestCase):
