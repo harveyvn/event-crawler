@@ -15,6 +15,15 @@ class Reader:
         if self.conn is not None:
             self.conn.close()
 
+    def get_events(self):
+        """
+        Get all events.
+        Return:
+            ids (list): list of event id.
+        """
+        self.conn.cur.execute(f'SELECT id FROM events;')
+        return self.conn.cur.fetchall()
+
     def get_date(self, id):
         """
         Get an event date.

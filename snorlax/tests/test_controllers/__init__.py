@@ -4,7 +4,7 @@ from .test_crawler import TestCrawler
 
 
 def load_tests(suite, loader):
+    suite.addTests(loader.loadTestsFromTestCase(TestCrawler))
     suite.addTests(loader.loadTestsFromTestCase(TestWriter))
     suite.addTests(loader.loadTestsFromTestCase(TestReader))
-    suite.addTests(loader.loadTestsFromTestCase(TestCrawler))
     return suite

@@ -20,6 +20,9 @@ event = events[0]
 
 
 class TestReader(unittest.TestCase):
+    def test_get_events(self):
+        self.assertEqual(3, len(reader.get_events()))
+
     def test_get_title(self):
         self.assertEqual(event[CONST.TITLE], reader.get_title(id))
 
