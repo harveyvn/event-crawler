@@ -5,7 +5,7 @@ class Event:
     def __init__(self, title: str):
         self.title = title
         self.status = CONST.PASSED
-        if title is None:
+        if not title:
             self.status = CONST.FAILED
 
     def found(self):
