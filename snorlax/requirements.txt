@@ -2,3 +2,4 @@ psycopg2-binary==2.9.3
 Scrapy==2.5.1
 scrapyscript==1.1.5
 yaspin==2.1.0
+pytest==6.2.5
