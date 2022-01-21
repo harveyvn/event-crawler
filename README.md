@@ -37,7 +37,7 @@ Download the repository and execute those commands within the repository directo
 docker-compose build
 ```
 
-Running Snorler and playing through interactive prompts.
+Waking Snorlax up and walk through interactive prompts.
 ```
 docker-compose run --rm app && docker-compose down postgres
 ```
