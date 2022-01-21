@@ -34,10 +34,10 @@ Running Snorler and playing through interactive prompts.
 ```
 docker-compose run --rm app && docker-compose down postgres
 ```
+<p align="left"><img src="https://user-images.githubusercontent.com/3027146/150591255-90c347b8-0acc-4920-8694-bac3fb293364.jpg" width="600"></p>
 
-
-
-Executing Tests and review the code coverage.
+Executing Tests and perform on-the-fly line coverage measuring for source code with low runtime overhead.
 ```
 docker-compose run --rm test && docker-compose down postgres
 ```
+<p align="left"><img src="https://user-images.githubusercontent.com/3027146/150591460-d9630c95-a0e9-4705-916d-19d649f99d7e.jpg" width="600"></p>
