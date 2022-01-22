@@ -8,6 +8,7 @@ This document describes how to install and use SNORLAX, a prototype of using Pyt
 - Run on different machines with docker compose.
 - Attractive interactive prompt python.
 - Export database as csv file.
+- 70-80% code coverage by unit tests.
 
 ## Repo Organization
 
