@@ -6,9 +6,9 @@ This document describes how to install and use SNORLAX, a prototype of using Pyt
 - Crawl events (date, time, location, title, artists, works and image link).
 - Insert data into database (PostgresSQL), with a self-defined schema.
 - Run on different machines with docker compose.
-- Attractive interactive prompt python.
-- Export database as csv file.
-- 70-80% code coverage by unit tests.
+- User interactive prompts in Python with ease.
+- Export PostgreSQL tables to a CSV file.
+- 70% code coverage by unit tests.
 
 ## Repo Organization
 
