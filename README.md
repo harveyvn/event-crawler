@@ -1,6 +1,6 @@
 # SNORLAX: Automatically Crawling Events with Python
 
-This document describes how to install and use SNORLAX. A video demonstration of the tool is available on [YouTube](https://youtu.be/3FeCl4ayFvs).
+This document describes how to install and use SNORLAX, a prototype of using Python, Scrapy and Postgres for Data Crawling. A video demonstration of the tool is available on [YouTube](https://youtu.be/3FeCl4ayFvs).
 
 ## Goals
 - Crawl events (date, time, location, title, artists, works and image link).
