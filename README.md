@@ -37,13 +37,13 @@ Download the repository and execute those commands within the repository directo
 docker-compose build
 ```
 
-Waking Snorlax up and walk through interactive prompts.
+Waking Snorlax up and walking through interactive prompts.
 ```
 docker-compose run --rm app && docker-compose down postgres
 ```
 <p align="left"><img src="https://user-images.githubusercontent.com/3027146/150591255-90c347b8-0acc-4920-8694-bac3fb293364.jpg" width="600"></p>
 
-Executing Tests and perform on-the-fly line coverage measuring for source code with low runtime overhead.
+Executing Tests and performing on-the-fly line coverage measuring for source code with low runtime overhead.
 ```
 docker-compose run --rm test && docker-compose down postgres
 ```
