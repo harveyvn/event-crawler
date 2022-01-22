@@ -6,7 +6,7 @@ This document describes how to install and use SNORLAX, a prototype of using Pyt
 - Crawl events (date, time, location, title, artists, works and image link).
 - Insert data into database (PostgresSQL), with a self-defined schema.
 - Run on different machines with docker compose.
-- User interactive prompts in Python with ease.
+- Use interactive prompts in Python with ease.
 - Export PostgreSQL tables to a CSV file.
 - 70% code coverage by unit tests.
 
@@ -19,10 +19,11 @@ This document describes how to install and use SNORLAX, a prototype of using Pyt
 ├── snorlax
 │   ├── modules
 │   ├── tests
+│   ├── main.py
 │   └── requirements.txt
 └── docker-compose.yml
 ```
-The `snorlax` folder contains the source code of the tool, including running code and unittest. 
+The `snorlax` folder contains the source code of the tool, including unit tests. 
 
 `create_tables.sql` initializes necessary relations for later usage at the beginning.
 
