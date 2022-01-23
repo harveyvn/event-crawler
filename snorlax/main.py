@@ -14,8 +14,6 @@ if __name__ == '__main__':
         choice = input("Choice: ")
         if choice == 'Q':
             flag = False
-        if choice == 'T':
-            pass
         if choice == 'Y':
             url = input("Enter an url to crawl events, (B) Back: ")
             if url == 'B':
