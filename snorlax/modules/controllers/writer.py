@@ -8,6 +8,13 @@ from modules.models import Location, Cover, Artist, Song, Event, EventLocation, 
 
 
 class Writer:
+    """
+    The Writer class declares the interface that accepts list of event dictionary, writes to Postgres
+    and returns list of ids.
+
+    Args:
+        events [dict]: list of a event dictionary.
+    """
     def __init__(self, events: List[dict]):
         self.events = events
         self.event_ids = []
