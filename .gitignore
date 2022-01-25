@@ -154,4 +154,3 @@ cython_debug/
 .idea/
 postgres-data/
 _trial_temp/
-*.csv
