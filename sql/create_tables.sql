@@ -31,23 +31,23 @@ CREATE TABLE IF NOT EXISTS events (
 	title VARCHAR (250) UNIQUE NOT NULL
 );
 CREATE TABLE IF NOT EXISTS event_locations (
-    event_id INTEGER,
-    location_id INTEGER,
-    date TIMESTAMPTZ,
-    PRIMARY KEY (event_id, location_id)
+	event_id INTEGER REFERENCES events (id) ON UPDATE CASCADE ON DELETE CASCADE,
+	location_id INTEGER REFERENCES locations (id) ON UPDATE CASCADE,
+	date TIMESTAMPTZ,
+	CONSTRAINT event_locations_pkey PRIMARY KEY (event_id, location_id)
 );
 CREATE TABLE IF NOT EXISTS event_covers (
-    event_id INTEGER,
-    cover_id INTEGER,
-    PRIMARY KEY (event_id, cover_id)
+	event_id INTEGER REFERENCES events (id) ON UPDATE CASCADE ON DELETE CASCADE,
+	cover_id INTEGER REFERENCES covers (id) ON UPDATE CASCADE,
+	CONSTRAINT event_covers_pkey PRIMARY KEY (event_id, cover_id)
 );
 CREATE TABLE IF NOT EXISTS event_artists (
-    event_id INTEGER,
-    artist_id INTEGER,
-    PRIMARY KEY (event_id, artist_id)
+	event_id INTEGER REFERENCES events (id) ON UPDATE CASCADE ON DELETE CASCADE,
+	artist_id INTEGER REFERENCES artists (id) ON UPDATE CASCADE,
+	CONSTRAINT event_artists_pkey PRIMARY KEY (event_id, artist_id)
 );
 CREATE TABLE IF NOT EXISTS event_songs (
-    event_id INTEGER,
-    song_id INTEGER,
-    PRIMARY KEY (event_id, song_id)
+	event_id INTEGER REFERENCES events (id) ON UPDATE CASCADE ON DELETE CASCADE,
+	song_id INTEGER REFERENCES songs (id) ON UPDATE CASCADE,
+	CONSTRAINT event_songs_pkey PRIMARY KEY (event_id, song_id)
 );
